@@ -32,9 +32,16 @@ nav {
     align-items: center;
 }
 
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
 .logo img {
     height: 50px;
     fill: lightyellow;
+    animation: spin 5s linear infinite;
+
 
 }
 
