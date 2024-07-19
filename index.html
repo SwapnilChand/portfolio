@@ -6,6 +6,25 @@
     <script src="https://kit.fontawesome.com/85f219c610.js" crossorigin="anonymous"></script>    
     <title>Dreamy Moon</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1a2c4e;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            z-index: 1000;
+            max-width: 300px;
+            color: #ffd700;
+        }
+        .close-btn {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -34,22 +53,26 @@
                 </ul>
                 <br>
             <div class="cta-buttons">
-                <button class="btn primary">Projects</button>
                 <a href="https://docs.google.com/document/d/1oSfkb9p6W-e4RTAEwvaaFJ0hV-bJrbA2" rel="noopener" target="_blank">
-                    <button class="btn primary" onclick="openPopup()">Resume</button>
+                    <button class="btn primary">Resume</button>
                 </a>
             </div>
             <div class="social-links">
                 <a href="https://x.com/chwapnil" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="https://github.com/SwapnilChand/" class="social-icon"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.instagram.com/chwapnil/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com/swapnilchand"  class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="mailto:swapnilchand51@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
             </div>
          </div>
         </section>
-        
     </main>
     
+    <aside id="aboutSection" class="about-section">
+        <h2>About Me</h2>
+        <p>Here you can add more detailed information about yourself, your journey, and your interests in software, music, and AI.</p>
+    </aside>
+
     <script src="script.js"></script>
 </body>
 </html>
