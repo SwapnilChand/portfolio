@@ -1,7 +1,7 @@
 const { Octokit } = require("octokit");
 
 module.exports = async (req, res) => {
-  const repoName = req.query["repo-name"];
+  const { ["repo-name"]: repoName } = req.query;
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
   try {
