@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth antialiased">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>More work · Swapnil Chand</title>
+<meta name="description" content="Everything Swapnil Chand has built: voice AI, full-stack, mobile and tools.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@200;300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body{font-family:Inter,sans-serif}.font-geist{font-family:Geist,sans-serif}
+  .card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+</style>
+</head>
+<body class="bg-white text-neutral-900 selection:bg-neutral-200 overflow-x-hidden">
+<main class="max-w-5xl mx-auto px-4 sm:px-6 py-14">
+  <a href="/" class="text-sm text-neutral-500 hover:text-neutral-900">← Back</a>
+  <h1 class="font-geist font-extralight tracking-tight text-4xl sm:text-5xl mt-6">More work</h1>
+  <p class="text-neutral-500 mt-3 max-w-2xl">Everything I've built, newest and most serious first. Voice AI is where I go deep. The rest is full-stack, mobile, and tools I made because I needed them.</p>
+
+  <div id="root" class="mt-12 space-y-14"></div>
+
+  <footer class="mt-20 pt-8 border-t border-neutral-200 text-sm text-neutral-500 flex flex-wrap gap-4 justify-between">
+    <span>Swapnil Chand · Bangalore</span>
+    <span><a class="hover:text-neutral-900" href="https://x.com/chwapnil">X</a> · <a class="hover:text-neutral-900" href="https://github.com/SwapnilChand/">GitHub</a> · <a class="hover:text-neutral-900" href="https://cal.com/swapnilchand/quick">Book a call</a></span>
+  </footer>
+</main>
+<script>
+const gh = r => "https://github.com/SwapnilChand/" + r;
+const data = [
+ ["Voice AI", [
+  ["Interrogation Room", "Multi-agent voice game. You question 3 AI suspects and an AI sub-inspector, all live in one WebRTC room. They hear each other and you can interrupt anyone mid-sentence.", "Pipecat · LiveKit/Daily · Sarvam · MCP", [["Site","https://interrogation-room-eight.vercel.app"]], "flagship"],
+  ["voice-engine", "UI plus backend pipeline for a voice bot on Sarvam's STT, LLM and TTS.", "Python · Sarvam", [["Code",gh("voice-engine")]]],
+  ["WhisperingSpirit", "Akinator-style voice game: think of someone, and the spirit guesses by asking you questions out loud.", "React · Vite · voice", [], "in progress"],
+  ["VAD experiment", "Tested whether a custom-trained voice activity detector beats off-the-shelf ones on speed, on a Pipecat fork.", "Pipecat · Silero", [["Fork",gh("pipecat")]]],
+  ["movie-booking-agent", "Talk or type to book cinema tickets. An AI agent over a full booking backend.", "FastAPI · Postgres · Redis · Flutter", [["Code",gh("movie-booking-agent")],["Demo","https://www.loom.com/share/c660babf18a1489ba0ebb52cbdb9d75c"]]],
+ ]],
+ ["Mobile", [
+  ["Offlyn", "Freelance Flutter work on an events and experiences app, plus its Node/Mongo server and Next.js admin dashboard.", "Flutter · Node · MongoDB · Next.js", [["Live","https://offlyn.life"]]],
+  ["Healthtech app", "Flutter mobile app built for a healthtech startup.", "Flutter", [["Demo","https://www.loom.com/share/4b9e5621149745df8e0bce90cfd97ed7"]]],
+  ["vidsync", "Captures video, stores metadata locally, and syncs uploads reliably on flaky networks. Built for a robotics startup.", "React Native · Expo", [["Code",gh("vidsync")]]],
+  ["ble-monitor", "Heart-rate monitor UI with mock BLE streams.", "Flutter", [["Code",gh("ble-monitor")]]],
+  ["just meditate", "Minimal meditation app: breathing orb, bells, rain sounds, streaks. Works offline.", "PWA · mobile", [["Code",gh("justmeditate")]]],
+ ]],
+ ["AI tools", [
+  ["cola", "Talk to your terminal. A small model running on your own machine turns plain English into shell commands.", "local LLM · CLI", []],
+  ["photosearch", "Search your photos in plain English. Runs fully on your PC: no cloud, no API keys, no GPU.", "local embeddings", [["Code",gh("photosearch")]]],
+  ["code-tutor", "Claude Code plugin that teaches you a codebase by moving your editor's cursor and drawing on a live whiteboard.", "Claude Code · MCP · VS Code", []],
+  ["releaser", "Marketing agent that watches a git repo and drafts a post for every meaningful change.", "agents", []],
+  ["PromptTune", "Open-source tool for testing and improving prompts.", "Next.js · TypeScript", [["Code",gh("prompt-tune")]]],
+  ["Akiradocs", "Docs web app with a companion VS Code extension.", "Next.js · VS Code", [["Code",gh("akiradocs-template")]]],
+  ["BrowserAI notes", "Private AI notes. The LLM runs in your browser.", "WebGPU · LLM", [["Code",gh("browserai-notes")]]],
+ ]],
+ ["Small utilities", [
+  ["wifi-keepalive", "Keeps captive-portal cafe wifi from dropping you on Linux, and pings you when it needs a login again.", "Linux · bash", [["Code",gh("wifi-keepalive")]]],
+  ["meditate-cli", "Terminal meditation timer with bells and random ambient music.", "bash · mpv", [["Code",gh("meditate-cli")]]],
+  ["chordcraft", "Piano chord guide with MIDI sync. Learn songs finger by finger on both hands.", "Electron · MIDI · Gemini", []],
+  ["vif", "A to-do list you write in natural language.", "web", [["Code",gh("vif")]]],
+  ["paisatracker", "Dashboard for tracking invoices and purchases, with data upload.", "web", [["Code",gh("paisatracker")]]],
+ ]],
+];
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("root").innerHTML = data.map(([group, items]) => `
+  <section>
+    <h2 class="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-5">${group}</h2>
+    <div class="grid sm:grid-cols-2 gap-4">${items.map(([name, desc, stack, links, badge]) => `
+      <div class="card rounded-xl border ${badge==="flagship"?"border-neutral-900 bg-neutral-900 text-neutral-100":"border-neutral-200 bg-neutral-50"} p-5 flex flex-col">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-geist font-light tracking-tight text-lg">${esc(name)}</h3>
+          ${badge?`<span class="text-[11px] px-2 py-0.5 rounded-full border ${badge==="flagship"?"border-neutral-600 text-neutral-300":"border-neutral-300 text-neutral-500"}">${badge}</span>`:""}
+        </div>
+        <p class="text-sm mt-2 leading-relaxed ${badge==="flagship"?"text-neutral-300":"text-neutral-600"}">${esc(desc)}</p>
+        <p class="text-xs mt-3 ${badge==="flagship"?"text-neutral-400":"text-neutral-400"}">${esc(stack)}</p>
+        ${links.length?`<div class="flex gap-3 mt-4 text-sm font-medium">${links.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener" class="underline underline-offset-4 decoration-neutral-400 hover:decoration-current">${l} ↗</a>`).join("")}</div>`:""}
+      </div>`).join("")}
+    </div>
+  </section>`).join("");
+</script>
+</body>
+</html>
