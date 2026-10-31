@@ -2,14 +2,19 @@
 <html lang="en" class="scroll-smooth antialiased">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
 <title>More work · Swapnil Chand</title>
-<meta name="description" content="Everything Swapnil Chand has built: voice AI, full-stack, mobile and tools.">
+<meta name="description" content="Everything Swapnil Chand has built: voice AI, 56 live web apps, mobile and tools.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@200;300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   body{font-family:Inter,sans-serif}.font-geist{font-family:Geist,sans-serif}
-  .card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+  .card{transition:transform .2s,box-shadow .2s}
+  @media (hover:hover) and (pointer:fine){.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.06)}.prod:hover .pname{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#a3a3a3}}
+  html{-webkit-tap-highlight-color:transparent}a{touch-action:manipulation}
+  .prod:active{opacity:.6}
+  p,.prod span{text-wrap:pretty}
 </style>
 </head>
 <body class="bg-white text-neutral-900 selection:bg-neutral-200 overflow-x-hidden">
@@ -43,7 +48,6 @@ const data = [
   ["just meditate", "Minimal meditation app: breathing orb, bells, rain sounds, streaks. Works offline.", "PWA · mobile", [["Code",gh("justmeditate")]]],
  ]],
  ["AI tools", [
-  ["cola", "Talk to your terminal. A small model running on your own machine turns plain English into shell commands.", "local LLM · CLI", []],
   ["photosearch", "Search your photos in plain English. Runs fully on your PC: no cloud, no API keys, no GPU.", "local embeddings", [["Code",gh("photosearch")]]],
   ["code-tutor", "Claude Code plugin that teaches you a codebase by moving your editor's cursor and drawing on a live whiteboard.", "Claude Code · MCP · VS Code", []],
   ["releaser", "Marketing agent that watches a git repo and drafts a post for every meaningful change.", "agents", []],
@@ -59,8 +63,81 @@ const data = [
   ["paisatracker", "Dashboard for tracking invoices and purchases, with data upload.", "web", [["Code",gh("paisatracker")]]],
  ]],
 ];
+const products = [
+ ["Voice and audio", [
+  ["murmur", "Say how your day went. Your phone writes it down, uploads nothing.", "https://murmur-mu-plum.vercel.app"],
+  ["anysub", "Subtitle any video in 24 languages, whatever language it was spoken in.", "https://anysub.vercel.app"],
+  ["maathu", "Practice the Kannada you need in a Bangalore auto, out loud.", "https://maathu-sigma.vercel.app"],
+  ["saywords", "Say three words and your link opens on their phone.", "https://saywords.vercel.app"],
+  ["evenvoice", "Fix a voice that fades in and out, without uploading your video.", "https://evenvoice.vercel.app"],
+  ["humkeys", "Hum a tune and see which piano keys play it.", "https://humkeys.vercel.app"],
+  ["segue", "Your songs as one mix, every handover on the beat.", "https://segue-lime.vercel.app"],
+  ["waitkeys", "Learn any MIDI song on piano. Each note waits for the right key.", "https://waitkeys.vercel.app"],
+ ]],
+ ["Developer tools", [
+  ["cola", "Type plain English at your bash prompt and get the command, offline.", "https://cola-sh.vercel.app"],
+  ["jsonmend", "Fix broken JSON from a model or a log, and see every change.", "https://jsonmend.vercel.app"],
+  ["pastepack", "Turn a project folder into one paste for ChatGPT or Claude.", "https://pastepack.vercel.app"],
+  ["promptpen", "Mark the lines in your prompt that make a model guess.", "https://promptpen.vercel.app"],
+  ["diffname", "Branch names from your diff, in the style your repo already uses.", "https://diffname.vercel.app"],
+  ["repoatlas", "Draw which folders import which in any GitHub repo.", "https://repoatlas-woad.vercel.app"],
+  ["whatdidirun", "Ask your shell history what you ran last month.", "https://whatdidirun.vercel.app"],
+  ["shipnotes", "Turn a week of \"fix stuff\" commits into a changelog people can read.", "https://shipnotes-chi.vercel.app"],
+  ["docsask", "Ask your docs a question and see the section every sentence came from.", "https://docsask.vercel.app"],
+  ["uiseek", "Search 451 shadcn registries at once, in plain words.", "https://uiseek.vercel.app"],
+  ["needpkg", "Describe it in plain words. Get the npm install line.", "https://needpkg.vercel.app"],
+  ["pickapart", "Click any element on any website and copy its CSS.", "https://pickapart.vercel.app"],
+  ["starsearch", "Search your GitHub stars by describing what the repo does.", "https://starsearch-psi.vercel.app"],
+  ["todaywall", "A desktop wallpaper of today's goals and your commits since yesterday.", "https://todaywall.vercel.app"],
+ ]],
+ ["AI for reading and learning", [
+  ["lucidlearn", "A lecture player that pauses where you'd get lost and explains it.", "https://lucidlearn.vercel.app"],
+  ["feynpad", "Explain a topic in your own words and see which sentences are wrong.", "https://feynpad.vercel.app"],
+  ["eli5", "Any sentence in plain words, in a bubble right under it.", "https://eli5-extension.vercel.app"],
+  ["chapterdo", "Turn a book PDF into a checklist that cites its pages.", "https://chapterdo.vercel.app"],
+  ["offshoot", "Highlight one line of an AI answer. Ask about it in a side branch.", "https://offshoot-sigma.vercel.app"],
+  ["skimline", "The last 24 hours of AI on Bluesky, in a few short stories.", "https://skimline-green.vercel.app"],
+  ["lightbulb", "Today's Hacker News, Lobsters and DEV, ranked by one sentence you write.", "https://lightbulb-two.vercel.app"],
+  ["pathbook", "Choose your own adventure books, with a page written for every choice.", "https://pathbook.vercel.app"],
+  ["dayone", "Read the first commit of Git, React, Redis and 38 other famous repos.", "https://dayone-zeta-one.vercel.app"],
+  ["beforethehit", "Count the repos anyone shipped before their first 1,000 stars.", "https://beforethehit.vercel.app"],
+  ["margins", "Read English essays with Hindi or Tamil beside every paragraph.", null],
+ ]],
+ ["Launching a product", [
+  ["pagecritic", "See the exact lines on your landing page that lose visitors.", "https://pagecritic-ivory.vercel.app"],
+  ["ideacheck", "See who already built your idea on Hacker News and GitHub.", "https://ideacheck-phi.vercel.app"],
+  ["handlehunt", "Find a project name still free on GitHub, npm, PyPI and .com.", "https://handlehunt-beta.vercel.app"],
+  ["flowcast", "Turn a list of steps into a narrated tutorial video of your app.", "https://flowcast-flax.vercel.app"],
+  ["swipeskin", "See your website in six new designs. Swipe to keep one.", "https://swipeskin.vercel.app"],
+  ["fromhandle", "Turn your GitHub, Bluesky, DEV and Hacker News into one portfolio page.", "https://fromhandle.vercel.app"],
+  ["plainpost", "Turn build notes into X or LinkedIn posts that quote their source line.", "https://plainpost.vercel.app"],
+  ["fromposts", "Turn your Bluesky or Hacker News posts into a cited blog draft.", "https://fromposts.vercel.app"],
+  ["potluckpost", "One link where your team adds facts. Every post line names its source.", "https://potluckpost.vercel.app"],
+ ]],
+ ["Productivity", [
+  ["hourplan", "Fit your to do list between today's meetings. Every block says why.", "https://hourplan.vercel.app"],
+  ["mailask", "Ask your Gmail export a question and get the email that answers it.", "https://mailask.vercel.app"],
+  ["rummage", "Search your bookmarks by what you remember, even when no word matches.", "https://rummage-eight.vercel.app"],
+  ["loudping", "Your phone rings loud when the email you're waiting for lands.", "https://loudping.vercel.app"],
+  ["whygrid", "A habit tracker that asks why you skipped, and spots the pattern.", "https://whygrid.vercel.app"],
+  ["askround", "Ask your team one anonymous question. Get a ranked list of fixes.", "https://askround.vercel.app"],
+  ["circlebook", "Merge your phone, Google, LinkedIn and Instagram contacts into one list.", "https://circlebook.vercel.app"],
+  ["shotseed", "Turn forgotten screenshots into ideas that cite them by number.", "https://shotseed.vercel.app"],
+ ]],
+ ["Jobs and hiring", [
+  ["repojobs", "Drop your package.json and get HN Who is hiring jobs ranked by your stack.", "https://repojobs.vercel.app"],
+  ["startupsnear", "See which YC startups in your city are hiring right now.", "https://startupsnear.vercel.app"],
+  ["docready", "Check a candidate's resume against their EPF history before day one.", "https://docready-dun.vercel.app"],
+ ]],
+ ["Just for fun", [
+  ["meowshin", "Make your voice a kawaii cat for reels, right in your browser.", "https://idea-list-puce.vercel.app"],
+  ["myhand", "Write each letter once on screen. Download your handwriting as a font.", "https://myhand-ten.vercel.app"],
+  ["whatsit", "Draw the thing you can't name and get its name.", "https://whatsit-inky.vercel.app"],
+  ["slangmoji", "Type slang and get the emoji your keyboard never suggests.", "https://slangmoji.vercel.app"],
+ ]],
+];
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-document.getElementById("root").innerHTML = data.map(([group, items]) => `
+const groupHTML = ([group, items]) => `
   <section>
     <h2 class="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-5">${group}</h2>
     <div class="grid sm:grid-cols-2 gap-4">${items.map(([name, desc, stack, links, badge]) => `
@@ -74,7 +151,33 @@ document.getElementById("root").innerHTML = data.map(([group, items]) => `
         ${links.length?`<div class="flex gap-3 mt-4 text-sm font-medium">${links.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener" class="underline underline-offset-4 decoration-neutral-400 hover:decoration-current">${l} ↗</a>`).join("")}</div>`:""}
       </div>`).join("")}
     </div>
-  </section>`).join("");
+  </section>`;
+const slug = g => g.toLowerCase().replace(/[^a-z]+/g, "-");
+const prodHTML = ([group, items]) => `
+  <section id="${slug(group)}" class="scroll-mt-6">
+    <h2 class="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-2">${group}</h2>
+    <ul class="grid sm:grid-cols-2 sm:gap-x-10">${items.map(([name, line, url]) => url ? `
+      <li class="border-t border-neutral-200"><a href="${url}" target="_blank" rel="noopener" class="prod block py-4">
+        <span class="flex items-baseline justify-between gap-3"><span class="pname font-geist font-light tracking-tight text-lg">${esc(name)}</span><span class="text-xs text-neutral-400 truncate">${esc(url.replace("https://",""))}</span></span>
+        <span class="block text-sm text-neutral-600 mt-1 leading-relaxed">${esc(line)}</span>
+      </a></li>` : `
+      <li class="border-t border-neutral-200 py-4">
+        <span class="flex items-baseline justify-between gap-3"><span class="font-geist font-light tracking-tight text-lg text-neutral-500">${esc(name)}</span><span class="text-[11px] px-2 py-0.5 rounded-full border border-neutral-300 text-neutral-500">coming soon</span></span>
+        <span class="block text-sm text-neutral-500 mt-1 leading-relaxed">${esc(line)}</span>
+      </li>`).join("")}
+    </ul>
+  </section>`;
+const live = products.flatMap(([, items]) => items).filter(i => i[2]).length;
+document.getElementById("root").innerHTML =
+  groupHTML(data[0]) + `
+  <section id="products">
+    <h2 class="font-geist font-extralight tracking-tight text-3xl sm:text-4xl">${live} live web apps</h2>
+    <p class="text-neutral-500 mt-3 max-w-2xl">Small products I built and shipped in October 2026, starting with the voice ones. Every link opens the working app, free to try.</p>
+    <nav aria-label="Product groups" class="mt-6 flex flex-wrap gap-x-5 text-sm text-neutral-600">${products.map(([g]) => `<a href="#${slug(g)}" class="py-2 underline underline-offset-4 decoration-neutral-300">${g}</a>`).join("")}</nav>
+    <div class="mt-10 space-y-12">${products.map(prodHTML).join("")}</div>
+  </section>
+  <h2 class="font-geist font-extralight tracking-tight text-3xl sm:text-4xl pt-4">Earlier work</h2>` +
+  data.slice(1).map(groupHTML).join("");
 </script>
 </body>
 </html>
