@@ -1,971 +1,655 @@
+<!doctype html>
 <html lang="en" class="scroll-smooth antialiased">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Swapnil Chand - Software Engineer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#ffffff" />
+        <title>Swapnil Chand, developer. Voice AI agents, LLM evals and full stack apps</title>
+        <meta name="description" content="I build voice AI agents, LLM evals, AI agents and full stack apps. Shipped at Bolna AI (YC F25) and Arrowhead. Based in Bangalore." />
+        <meta property="og:title" content="Swapnil Chand, developer" />
+        <meta property="og:description" content="Voice AI agents, LLM evals, AI agents and full stack apps. See each one working." />
+        <meta property="og:image" content="https://swapnilc.vercel.app/assets/video/intro.jpg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@200;300;400;500&display=swap"
             rel="stylesheet"
         />
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
         <style>
-            @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600&display=swap");
+            body { font-family: "Inter", sans-serif; }
+            .font-geist { font-family: "Geist", sans-serif; }
+            html { -webkit-tap-highlight-color: transparent; }
+            a, button { touch-action: manipulation; }
+            p, dd, figcaption { text-wrap: pretty; }
+            :focus-visible { outline: 2px solid #171717; outline-offset: 3px; border-radius: 6px; }
+
+            /* Page load, same feel as before, now without the flash during the delay */
             @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
             }
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
+            .animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+            .animate-delay-100 { animation-delay: 0.1s; }
+            .animate-delay-200 { animation-delay: 0.2s; }
+            .animate-delay-300 { animation-delay: 0.3s; }
+            .animate-delay-400 { animation-delay: 0.4s; }
+            .animate-delay-500 { animation-delay: 0.5s; }
+
+            /* Tabs */
+            .tab-pill { transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1); }
+            [data-active="experience"] .tab-pill { transform: translateX(100%); }
+            .tab { transition: color 0.2s ease-out; }
+
+            /* Hero intro */
+            .intro-ring video { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+            @media (hover: hover) and (pointer: fine) {
+                .intro-ring:hover video { transform: scale(1.04); }
+                .card-link:hover .card-media img { transform: scale(1.02); }
+                .blk-btn:hover .blk-title { color: #404040; }
             }
-            .animate-fade-in-up {
-                animation: fadeInUp 0.8s ease-out forwards;
-            }
-            .animate-fade-in {
-                animation: fadeIn 0.6s ease-out forwards;
-            }
-            .animate-delay-100 {
-                animation-delay: 0.1s;
-            }
-            .animate-delay-200 {
-                animation-delay: 0.2s;
-            }
-            .animate-delay-300 {
-                animation-delay: 0.3s;
-            }
-            .animate-delay-400 {
-                animation-delay: 0.4s;
-            }
-            .animate-delay-500 {
-                animation-delay: 0.5s;
-            }
-            .animate-delay-600 {
-                animation-delay: 0.6s;
-            }
-            .initial-hidden {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            .font-geist {
-                font-family: "Geist", sans-serif;
-            }
-            .font-inter {
-                font-family: "Inter", sans-serif;
-            }
-        </style>
-        <style>
-            /* Custom font utilities */
-            .font-geist {
-                font-family: "Geist", sans-serif !important;
-            }
-        </style>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Inter&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Geist&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            /* Custom font utilities */
-            .font-geist {
-                font-family: "Geist", sans-serif !important;
+            .intro-ring:active { transform: scale(0.98); }
+            .intro-ring { transition: transform 0.15s ease-out; }
+
+            /* Blocks */
+            .blk-icon { transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1); }
+            .blk-btn[aria-expanded="true"] .blk-icon { transform: rotate(45deg); }
+            .card-media img { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+            .rail { scrollbar-width: none; overscroll-behavior-x: contain; }
+            .rail::-webkit-scrollbar { display: none; }
+
+            @media (prefers-reduced-motion: reduce) {
+                *, *::before, *::after { animation: none !important; transition: none !important; }
             }
         </style>
     </head>
-    <body
-        class="bg-white text-neutral-900 selection:bg-neutral-200 relative overflow-x-hidden font-inter"
-    >
-        <header
-            class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 flex flex-col items-center"
-        >
-            <span
-                class="animate-fade-in-up inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-neutral-100 border border-neutral-200 text-sm font-medium text-neutral-700"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="award"
-                    class="lucide lucide-award w-3 h-3"
-                >
-                    <path
-                        d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
-                    ></path>
-                    <circle cx="12" cy="8" r="6"></circle>
-                </svg>
-                AI, Software and Music
-            </span>
+    <body class="bg-white text-neutral-900 selection:bg-neutral-200 relative overflow-x-hidden">
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-4">
+            <div class="grid lg:grid-cols-[1fr_auto] items-center gap-10 lg:gap-16">
+                <div>
+                    <h1 class="animate-fade-in-up text-6xl sm:text-7xl md:text-8xl font-geist font-extralight leading-[1.05] tracking-tighter">
+                        Swapnil Chand, Developer
+                    </h1>
+                    <p class="animate-fade-in-up animate-delay-100 max-w-xl text-neutral-600 text-lg mt-8 leading-relaxed">
+                        I build voice AI agents, the tests that tell you if your AI is any good, and the full stack apps around them.
+                    </p>
+                    <div class="animate-fade-in-up animate-delay-200 flex flex-wrap items-center gap-x-4 gap-y-2 mt-8 text-sm text-neutral-500">
+                        <span>Bangalore, IN</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-300" aria-hidden="true"></span>
+                        <span>IST (GMT +5:30)</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-300" aria-hidden="true"></span>
+                        <span class="flex items-center gap-2 text-neutral-900">
+                            <span class="w-2 h-2 rounded-full bg-neutral-900 animate-pulse" aria-hidden="true"></span>
+                            Available for projects and full time roles
+                        </span>
+                    </div>
+                </div>
 
-            <h1
-                class="animate-fade-in-up animate-delay-100 text-center text-6xl sm:text-7xl md:text-8xl font-geist font-extralight leading-tight tracking-tighter"
-            >
-                Swapnil Chand, <span class="text-neutral-900">Developer</span>
-            </h1>
-
-            <p
-                class="animate-fade-in-up animate-delay-200 max-w-2xl text-center text-neutral-600 text-lg mt-8 leading-relaxed font-inter"
-            >
-                Building software experiences. Based in Bangalore, working
-                globally.
-            </p>
-
-            <div
-                class="animate-fade-in-up animate-delay-300 flex flex-wrap items-center justify-center gap-4 mt-8"
-            >
-                <div
-                    class="flex items-center gap-2 text-sm text-neutral-500 font-inter"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        data-lucide="map-pin"
-                        class="lucide lucide-map-pin w-3 h-3"
+                <figure class="animate-fade-in-up animate-delay-300 flex flex-col items-start lg:items-center">
+                    <button
+                        id="intro"
+                        type="button"
+                        class="intro-ring relative block w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden bg-neutral-100 ring-1 ring-neutral-200"
+                        aria-label="Play my 90 second intro with sound"
+                        data-video="assets/video/intro.mp4"
+                        data-poster="assets/video/intro.jpg"
+                        data-title="My 90 second intro"
+                        data-loom="https://www.loom.com/share/59d816e03b7c44dcadc3fe1221655ac9"
                     >
-                        <path
-                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-                        ></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    Bangalore, IN
-                </div>
-                <div class="w-1 h-1 rounded-full bg-neutral-300"></div>
-                <div
-                    class="flex items-center gap-2 text-sm text-neutral-500 font-inter"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        data-lucide="clock"
-                        class="lucide lucide-clock w-3 h-3"
-                    >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    IST (GMT +5:30)
-                </div>
-                <div class="w-1 h-1 rounded-full bg-neutral-300"></div>
-                <div
-                    class="flex items-center gap-2 text-sm text-neutral-900 font-inter"
-                >
-                    <span
-                        class="w-2 h-2 rounded-full bg-neutral-900 animate-pulse"
-                    ></span>
-                    Available for Projects
-                </div>
+                        <video
+                            id="intro-preview"
+                            class="w-full h-full object-cover"
+                            src="assets/video/intro-face.mp4"
+                            poster="assets/video/intro-face.jpg"
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                            aria-hidden="true"
+                            tabindex="-1"
+                        ></video>
+                        <span class="absolute left-1/2 bottom-4 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-medium text-neutral-900 shadow-sm whitespace-nowrap">
+                            <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
+                            Tap for sound
+                        </span>
+                    </button>
+                    <figcaption class="mt-4 text-sm text-neutral-500">My 90 second intro</figcaption>
+                </figure>
             </div>
         </header>
 
-        <main
-            class="relative max-w-7xl sm:px-6 lg:px-8 mt-16 mr-auto mb-16 ml-auto pr-4 pl-4"
-        >
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 mb-24">
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-12">
-                <!-- Profile Card -->
+                <!-- Profile card -->
                 <section
-                    class="animate-fade-in-up animate-delay-400 xl:col-span-1 relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300"
+                    class="animate-fade-in-up animate-delay-400 xl:col-span-1 xl:self-start relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-sm"
+                    aria-label="About Swapnil"
                 >
                     <figure class="relative overflow-hidden">
                         <img
                             src="swapnil-talk.jpeg"
-                            alt="Portrait of Swapnil"
-                            class="w-full h-80 sm:h-96 hover:scale-105 transition-transform duration-700 object-cover"
+                            alt="Swapnil speaking on stage with a microphone"
+                            width="640"
+                            height="480"
+                            class="w-full h-72 sm:h-96 object-cover"
                         />
-
-                        <figcaption
-                            class="absolute bottom-4 left-4 flex items-center gap-2 text-xs font-medium font-inter text-white bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full"
-                        >
-                            <span
-                                class="h-2 w-2 rounded-full bg-white animate-pulse"
-                            ></span>
+                        <figcaption class="absolute bottom-4 left-4 flex items-center gap-2 text-xs font-medium text-white bg-black/50 px-3 py-1.5 rounded-full">
+                            <span class="h-2 w-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
                             Open to new opportunities
                         </figcaption>
                     </figure>
 
                     <div class="p-6 sm:p-8 space-y-6">
-                        <div class="">
-                            <h2
-                                class="text-xl font-geist font-extralight tracking-tight"
-                            >
-                                Hello, I'm
-                                <span class="text-neutral-900"
-                                    >Swapnil Chand</span
-                                >
-                            </h2>
-                            <p
-                                class="text-neutral-600 mt-2 leading-relaxed text-sm font-inter"
-                            >
-                                I help you build Voice AI agents, dashboards &
-                                web apps — FastAPI backends to React frontends,
-                                shipped at YC startups.
+                        <div>
+                            <h2 class="text-xl font-geist font-extralight tracking-tight">Hello, I'm Swapnil Chand</h2>
+                            <p class="text-neutral-600 mt-2 leading-relaxed text-sm">
+                                I build voice AI agents, dashboards and web apps, from FastAPI backends to React frontends. Shipped at a YC startup and two other AI startups.
                             </p>
                         </div>
 
-                        <div class="flex items-center gap-1 flex-wrap">
-                            <a
-                                href="https://x.com/chwapnil"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="X"
-                            >
-                                <button
-                                    class="p-3 rounded-lg hover:bg-neutral-100 transition-all duration-200"
-                                    aria-label="X"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                        class="w-4 h-4 text-neutral-600"
-                                        aria-hidden="true"
-                                    >
-                                        <path
-                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                                        ></path>
-                                    </svg>
-                                </button>
+                        <nav class="flex items-center gap-1 flex-wrap" aria-label="Elsewhere">
+                            <a href="https://x.com/chwapnil" target="_blank" rel="noopener noreferrer" aria-label="X" class="p-3 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-neutral-600" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                             </a>
-                            <a
-                                href="https://github.com/SwapnilChand/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                            >
-                                <button
-                                    class="p-3 rounded-lg hover:bg-neutral-100 transition-all duration-200"
-                                    aria-label="GitHub"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="w-4 h-4 text-neutral-600"
-                                        aria-hidden="true"
-                                    >
-                                        <path
-                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.2 1.23-.1 1.85v4"
-                                        ></path>
-                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                                    </svg>
-                                </button>
+                            <a href="https://github.com/SwapnilChand/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-3 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-600" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.2 1.23-.1 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                             </a>
-
-                            <a
-                                href="https://linkedin.com/in/swapnilchand"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                            >
-                                <button
-                                    class="p-3 rounded-lg hover:bg-neutral-100 transition-all duration-200"
-                                    aria-label="LinkedIn"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        data-lucide="linkedin"
-                                        class="lucide lucide-linkedin w-4 h-4 text-neutral-600"
-                                    >
-                                        <path
-                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                                        ></path>
-                                        <rect
-                                            width="4"
-                                            height="12"
-                                            x="2"
-                                            y="9"
-                                        ></rect>
-                                        <circle cx="4" cy="4" r="2"></circle>
-                                    </svg>
-                                </button>
+                            <a href="https://linkedin.com/in/swapnilchand" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-3 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-600" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                             </a>
-                            <a
-                                href="https://instagram.com/swapnilbuildsstuff"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Instagram"
-                            >
-                                <button
-                                    class="p-3 rounded-lg hover:bg-neutral-100 transition-all duration-200"
-                                    aria-label="Instagram"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="w-4 h-4 text-neutral-600"
-                                        aria-hidden="true"
-                                    >
-                                        <rect
-                                            width="20"
-                                            height="20"
-                                            x="2"
-                                            y="2"
-                                            rx="5"
-                                            ry="5"
-                                        ></rect>
-                                        <path
-                                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                                        ></path>
-                                        <line
-                                            x1="17.5"
-                                            x2="17.51"
-                                            y1="6.5"
-                                            y2="6.5"
-                                        ></line>
-                                    </svg>
-                                </button>
+                            <a href="https://instagram.com/swapnilbuildsstuff" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-3 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-600" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                             </a>
-                            <a
-                                href="mailto:swapnilchand51@gmail.com"
-                                aria-label="Email"
-                            >
-                                <button
-                                    class="p-3 rounded-lg hover:bg-neutral-100 transition-all duration-200"
-                                    aria-label="Email"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="w-4 h-4 text-neutral-600"
-                                        aria-hidden="true"
-                                    >
-                                        <path
-                                            d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                                        ></path>
-                                        <rect
-                                            x="2"
-                                            y="4"
-                                            width="20"
-                                            height="16"
-                                            rx="2"
-                                        ></rect>
-                                    </svg>
-                                </button>
+                            <a href="mailto:swapnilchand51@gmail.com" aria-label="Email" class="p-3 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-600" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
                             </a>
-                            <a
-                                href="https://cal.com/swapnilchand/30mins"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Cal.com"
-                            >
-                                <button
-                                    class="p-3 rounded-lg hover:bg-neutral-100 transition-all duration-200"
-                                    aria-label="Cal.com"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="w-4 h-4 text-neutral-600"
-                                        aria-hidden="true"
-                                    >
-                                        <rect
-                                            width="18"
-                                            height="18"
-                                            x="3"
-                                            y="4"
-                                            rx="2"
-                                            ry="2"
-                                        ></rect>
-                                        <line
-                                            x1="16"
-                                            x2="16"
-                                            y1="2"
-                                            y2="6"
-                                        ></line>
-                                        <line
-                                            x1="8"
-                                            x2="8"
-                                            y1="2"
-                                            y2="6"
-                                        ></line>
-                                        <line
-                                            x1="3"
-                                            x2="21"
-                                            y1="10"
-                                            y2="10"
-                                        ></line>
-                                    </svg>
-                                </button>
-                            </a>
-                        </div>
+                        </nav>
 
                         <div class="border-t border-neutral-200 pt-6 space-y-3">
                             <div class="grid grid-cols-2 gap-3">
-                                <a
-                                    href="mailto:swapnilchand51@gmail.com"
-                                    class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800 transform hover:scale-[1.02] transition-all duration-200 shadow-sm font-inter text-sm"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        data-lucide="mail"
-                                        class="lucide lucide-mail w-3 h-3"
-                                    >
-                                        <path
-                                            d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                                        ></path>
-                                        <rect
-                                            x="2"
-                                            y="4"
-                                            width="20"
-                                            height="16"
-                                            rx="2"
-                                        ></rect>
-                                    </svg>
-                                    Mail
-                                </a>
-                                <a
-                                    href="https://cal.com/swapnilchand/30mins"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800 transform hover:scale-[1.02] transition-all duration-200 shadow-sm font-inter text-sm"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        data-lucide="calendar"
-                                        class="lucide lucide-calendar w-3 h-3"
-                                    >
-                                        <rect
-                                            width="18"
-                                            height="18"
-                                            x="3"
-                                            y="4"
-                                            rx="2"
-                                            ry="2"
-                                        ></rect>
-                                        <line
-                                            x1="16"
-                                            x2="16"
-                                            y1="2"
-                                            y2="6"
-                                        ></line>
-                                        <line
-                                            x1="8"
-                                            x2="8"
-                                            y1="2"
-                                            y2="6"
-                                        ></line>
-                                        <line
-                                            x1="3"
-                                            x2="21"
-                                            y1="10"
-                                            y2="10"
-                                        ></line>
-                                    </svg>
-                                    Book a Cal
-                                </a>
+                                <a href="mailto:swapnilchand51@gmail.com" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800 transition-colors shadow-sm text-sm">Mail me</a>
+                                <a href="https://cal.com/swapnilchand/30mins" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800 transition-colors shadow-sm text-sm">Book a call</a>
                             </div>
-                            <a
-                                href="https://drive.google.com/file/d/1Ipg8d0EXYP3hEM1toqaL9ta1rHAjeNjW/view"
-                                class="inline-flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg border border-neutral-300 text-neutral-700 font-medium hover:bg-neutral-50 transition-all duration-200 font-inter text-sm"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    data-lucide="download"
-                                    class="lucide lucide-download w-3 h-3"
-                                >
-                                    <path d="M12 15V3"></path>
-                                    <path
-                                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                    ></path>
-                                    <path d="m7 10 5 5 5-5"></path>
-                                </svg>
-                                Download Resume
-                            </a>
-                            <a
-                                href="/more"
-                                class="inline-flex items-center justify-center w-full gap-2 px-6 py-3 mt-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-700 transition-all duration-200 font-inter text-sm"
-                            >
-                                More of my work →
-                            </a>
+                            <a href="https://drive.google.com/file/d/1Ipg8d0EXYP3hEM1toqaL9ta1rHAjeNjW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg border border-neutral-300 text-neutral-700 font-medium hover:bg-neutral-50 transition-colors text-sm">Download resume</a>
+                            <a href="/more" class="inline-flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg border border-neutral-300 text-neutral-700 font-medium hover:bg-neutral-50 transition-colors text-sm">See all 58 live apps</a>
                         </div>
                     </div>
                 </section>
 
-                <!-- About & Experience Cards -->
-                <div class="xl:col-span-2 space-y-8">
-                    <!-- About Card -->
-                    <section
-                        class="animate-fade-in-up animate-delay-500 relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-700 shadow-sm p-6 sm:p-8 hover:shadow-md transition-all duration-300"
-                        id="aura-emc25v4it"
-                    >
-                        <div class="flex items-center gap-3 mb-6">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                data-lucide="user"
-                                class="lucide lucide-user w-5 h-5 text-neutral-300"
-                            >
-                                <path
-                                    d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
-                                ></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            <h3
-                                class="text-xl font-geist font-extralight tracking-tight text-neutral-100"
-                            >
-                                About Me
-                            </h3>
+                <!-- Right side: tabs swap only this column -->
+                <div class="xl:col-span-2 min-w-0 animate-fade-in-up animate-delay-500">
+                    <div class="sticky top-3 z-30 flex justify-end pointer-events-none">
+                        <div id="tabs" role="tablist" aria-label="Show" data-active="build" class="pointer-events-auto relative grid grid-cols-2 rounded-full border border-neutral-200 bg-white p-1 shadow-sm text-sm font-medium">
+                            <span class="tab-pill absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-neutral-900" aria-hidden="true"></span>
+                            <button role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true" class="tab relative z-10 px-5 py-2.5 rounded-full text-white whitespace-nowrap" data-tab="build">What I build</button>
+                            <button role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1" class="tab relative z-10 px-5 py-2.5 rounded-full text-neutral-600 whitespace-nowrap" data-tab="experience">Experience</button>
                         </div>
+                    </div>
 
-                        <p
-                            class="text-neutral-300 leading-relaxed text-sm font-inter mb-8"
-                        >
-                            Full-stack developer with 2+ years building Voice AI
-                            & web products for startups. I ship FastAPI backends
-                            and React/Next.js frontends — from dashboards and
-                            billing to LLM workflows — focused on clean UX and
-                            reliable automation.
-                        </p>
+                    <!-- What I build -->
+                    <section id="panel-build" role="tabpanel" aria-labelledby="tab-build" class="mt-6">
+                        <h2 class="font-geist font-extralight tracking-tight text-3xl sm:text-4xl">What I can build for you</h2>
+                        <p class="text-neutral-600 mt-3 max-w-2xl leading-relaxed">Hardest and most asked for first. Open any one to see it working.</p>
 
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-                            <div
-                                class="text-center p-4 rounded-lg bg-neutral-800 border border-neutral-700"
-                            >
-                                <div
-                                    class="text-2xl font-geist font-extralight text-neutral-200"
-                                >
-                                    5+
-                                </div>
-                                <div
-                                    class="text-xs text-neutral-400 font-inter"
-                                >
-                                    Projects Completed
-                                </div>
-                            </div>
-                            <div
-                                class="text-center p-4 rounded-lg bg-neutral-800 border border-neutral-700"
-                            >
-                                <div
-                                    class="text-2xl font-geist font-extralight text-neutral-200"
-                                >
-                                    2+
-                                </div>
-                                <div
-                                    class="text-xs text-neutral-400 font-inter"
-                                >
-                                    Happy Clients
-                                </div>
-                            </div>
-                            <div
-                                class="text-center p-4 rounded-lg bg-neutral-800 border border-neutral-700 col-span-2 sm:col-span-1"
-                            >
-                                <div
-                                    class="text-2xl font-geist font-extralight text-neutral-200"
-                                >
-                                    2+
-                                </div>
-                                <div
-                                    class="text-xs text-neutral-400 font-inter"
-                                >
-                                    Years Experience
-                                </div>
-                            </div>
-                        </div>
+                        <div id="blocks" class="mt-8"></div>
 
-                        <div class="border-t border-neutral-700 pt-6">
-                            <h4
-                                class="text-xs font-medium text-neutral-500 mb-4 font-inter uppercase tracking-wider"
-                            >
-                                CORE EXPERTISE
-                            </h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300 font-inter"
-                                    >Frontend Development</span
-                                >
-                                <span
-                                    class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300 font-inter"
-                                    >LLMs</span
-                                >
-                                <span
-                                    class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300 font-inter"
-                                    >Backend Development</span
-                                >
-                            </div>
+                        <div id="answers" class="relative bg-white mt-14">
+                            <h3 class="font-geist font-light tracking-tight text-2xl">Short answers</h3>
+                            <dl class="mt-6 grid sm:grid-cols-2 gap-x-10">
+                                <div class="border-t border-neutral-200 py-4">
+                                    <dt class="text-sm text-neutral-500">Full time or freelance?</dt>
+                                    <dd class="mt-1 leading-relaxed">Both. I want a full time role as an AI, backend or full stack engineer, and I take freelance builds.</dd>
+                                </div>
+                                <div class="border-t border-neutral-200 py-4">
+                                    <dt class="text-sm text-neutral-500">When can you start?</dt>
+                                    <dd class="mt-1 leading-relaxed">Right away.</dd>
+                                </div>
+                                <div class="border-t border-neutral-200 py-4">
+                                    <dt class="text-sm text-neutral-500">Where do you work from?</dt>
+                                    <dd class="mt-1 leading-relaxed">Bangalore, on IST. Remote, or on site anywhere in India.</dd>
+                                </div>
+                                <div class="border-t border-neutral-200 py-4">
+                                    <dt class="text-sm text-neutral-500">What do you build with?</dt>
+                                    <dd class="mt-1 leading-relaxed">Python and FastAPI, TypeScript, React and Next.js, Flutter, Postgres. Pipecat, LiveKit and Sarvam for voice.</dd>
+                                </div>
+                                <div class="border-t border-neutral-200 py-4">
+                                    <dt class="text-sm text-neutral-500">How do you work?</dt>
+                                    <dd class="mt-1 leading-relaxed">You get something working in the first few days. Then we make it better together, on a call or in a shared doc.</dd>
+                                </div>
+                                <div class="border-t border-neutral-200 py-4">
+                                    <dt class="text-sm text-neutral-500">How do I reach you?</dt>
+                                    <dd class="mt-1 leading-relaxed"><a class="underline underline-offset-4 decoration-neutral-300 hover:decoration-current" href="https://cal.com/swapnilchand/30mins" target="_blank" rel="noopener">Book 30 minutes</a> or mail <a class="underline underline-offset-4 decoration-neutral-300 hover:decoration-current" href="mailto:swapnilchand51@gmail.com">swapnilchand51@gmail.com</a>.</dd>
+                                </div>
+                            </dl>
                         </div>
                     </section>
 
-                    <!-- Experience Card -->
-                    <section
-                        class="animate-fade-in-up animate-delay-600 relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-sm p-6 sm:p-8 hover:shadow-md transition-all duration-300"
-                    >
-                        <div class="flex items-center gap-3 mb-6">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                data-lucide="briefcase"
-                                class="lucide lucide-briefcase w-5 h-5 text-neutral-700"
-                            >
-                                <path
-                                    d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
-                                ></path>
-                                <rect
-                                    width="20"
-                                    height="14"
-                                    x="2"
-                                    y="6"
-                                    rx="2"
-                                ></rect>
-                            </svg>
-                            <h3
-                                class="text-xl font-geist font-extralight tracking-tight"
-                            >
-                                Professional Journey
-                            </h3>
+                    <!-- Experience -->
+                    <section id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" class="mt-6 space-y-8" hidden>
+                        <div class="relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-700 shadow-sm p-6 sm:p-8">
+                            <h2 class="text-xl font-geist font-extralight tracking-tight text-neutral-100">About me</h2>
+                            <p class="text-neutral-300 leading-relaxed text-sm mt-4 max-w-2xl">
+                                Full stack developer with close to 2 years at three AI startups, building voice AI and web products. I ship FastAPI backends and React or Next.js frontends, from dashboards and billing to LLM workflows. I care about clean UX and automation that doesn't need babysitting.
+                            </p>
+                            <div class="border-t border-neutral-700 pt-6 mt-8">
+                                <h3 class="text-sm text-neutral-400">Strongest at</h3>
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <span class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300">Voice AI</span>
+                                    <span class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300">LLM workflows</span>
+                                    <span class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300">Backend</span>
+                                    <span class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300">Frontend</span>
+                                    <span class="px-3 py-1.5 rounded-md bg-neutral-800 border border-neutral-700 text-xs font-medium text-neutral-300">Mobile</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="space-y-4">
-                            <div
-                                class="relative rounded-lg bg-neutral-900 border border-neutral-700 p-5 hover:shadow-sm transition-all duration-200"
-                                id="aura-emc25ww5t"
-                            >
-                                <div
-                                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
-                                >
-                                    <h4
-                                        class="font-geist font-light tracking-tight text-lg text-neutral-100"
-                                    >
-                                        Full Stack Developer
-                                    </h4>
-                                    <span
-                                        class="text-xs text-neutral-400 font-medium font-inter"
-                                        >2025, Aug - Current</span
-                                    >
-                                </div>
-                                <p
-                                    class="text-neutral-200 font-medium mb-2 font-inter text-sm"
-                                >
-                                    Bolna AI (YC F25)
-                                </p>
-                                <p
-                                    class="text-neutral-400 text-xs leading-relaxed font-inter"
-                                >
-                                    Built internal dashboards & 10+ FastAPI APIs
-                                    for enterprise data migrations, cost audits
-                                    & compliance. Automated health checks &
-                                    billing with Cron jobs & Slack alerts, and
-                                    prototyped a React Graph-based Agent
-                                    Builder.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-4">
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >FastAPI</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >Python</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >PostgreSQL</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >React</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >RabbitMQ</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >Datadog</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white text-neutral-900 text-xs font-medium font-inter border border-neutral-200"
-                                        >WebSockets</span
-                                    >
-                                </div>
-                            </div>
-                            <div
-                                class="relative rounded-lg bg-neutral-50 border border-neutral-200 p-5 hover:shadow-sm transition-all duration-200"
-                            >
-                                <div
-                                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
-                                >
-                                    <h4
-                                        class="font-geist font-light tracking-tight text-lg"
-                                    >
-                                        Prompt Engineer
-                                    </h4>
-                                    <span
-                                        class="text-xs text-neutral-600 font-medium font-inter"
-                                        >2025, Mar - 2025, June</span
-                                    >
-                                </div>
-                                <p
-                                    class="text-neutral-900 font-medium mb-2 font-inter text-sm"
-                                >
-                                    Arrowhead
-                                </p>
-                                <p
-                                    class="text-neutral-600 text-xs leading-relaxed font-inter"
-                                >
-                                    Prompt-engineered Voice AI for
-                                    PhysicsWallah, upGrad & more with an
-                                    8-person early team. Tuned Pipecat prompts
-                                    to cut hallucinations, hold long-context,
-                                    and shipped to production via rapid A/B
-                                    testing.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-4">
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >Pipecat</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >Prompt Engineering</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >Voice AI</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >LLM Optimization</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >A/B Testing</span
-                                    >
-                                </div>
-                            </div>
-
-                            <div
-                                class="relative rounded-lg bg-neutral-50 border border-neutral-200 p-5 hover:shadow-sm transition-all duration-200"
-                            >
-                                <div
-                                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
-                                >
-                                    <h4
-                                        class="font-geist font-light tracking-tight text-lg"
-                                    >
-                                        Software Engineer
-                                    </h4>
-                                    <span
-                                        class="text-xs text-neutral-600 font-medium font-inter"
-                                        >2024, June - 2025, Jan</span
-                                    >
-                                </div>
-                                <p
-                                    class="text-neutral-900 font-medium mb-2 font-inter text-sm"
-                                >
-                                    Cloud Code AI
-                                </p>
-                                <p
-                                    class="text-neutral-600 text-xs leading-relaxed font-inter"
-                                >
-                                    Sole early hire across 3 pivots — Kaizen AI,
-                                    Akiradocs & BrowserAI. Split time between a
-                                    VSCode extension and a Next.js/Tailwind app,
-                                    wiring UI to LLM endpoints for docs & code
-                                    reviews.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-4">
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >Next.js</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >TailwindCSS</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >TypeScript</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >VSCode API</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >LLM Integration</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >React</span
-                                    >
-                                </div>
-                            </div>
-
-                            <div
-                                class="relative rounded-lg bg-neutral-50 border border-neutral-200 p-5 hover:shadow-sm transition-all duration-200"
-                            >
-                                <div
-                                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
-                                >
-                                    <h4
-                                        class="font-geist font-light tracking-tight text-lg"
-                                    >
-                                        Android Developer
-                                    </h4>
-                                    <span
-                                        class="text-xs text-neutral-600 font-medium font-inter"
-                                        >2021, June - 2021, Aug</span
-                                    >
-                                </div>
-                                <p
-                                    class="text-neutral-900 font-medium mb-2 font-inter text-sm"
-                                >
-                                    WedMist
-                                </p>
-                                <p
-                                    class="text-neutral-600 text-xs leading-relaxed font-inter"
-                                >
-                                    Built user-centered e-commerce experiences
-                                    for Android — translating Figma designs into
-                                    performant, functional native apps.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-4">
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >Android</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >Java</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >XML</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >E-commerce</span
-                                    >
-                                    <span
-                                        class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-neutral-700 text-xs font-medium font-inter"
-                                        >UI/UX</span
-                                    >
-                                </div>
-                            </div>
+                        <div class="relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-sm p-6 sm:p-8">
+                            <h2 class="text-xl font-geist font-extralight tracking-tight">Professional journey</h2>
+                            <div id="jobs" class="space-y-4 mt-6"></div>
+                            <p class="text-sm text-neutral-500 mt-6">B.Tech in Computer Science, ITER, SOA University, 2020 to 2024.</p>
                         </div>
                     </section>
                 </div>
             </div>
         </main>
 
-        <script>
-            lucide.createIcons();
+        <!-- Video lightbox -->
+        <div id="lb" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+            <div id="lb-bg" class="absolute inset-0 bg-neutral-950/85"></div>
+            <div id="lb-box" class="relative w-full max-w-5xl">
+                <div id="lb-media" class="aspect-video w-full bg-black rounded-xl overflow-hidden"></div>
+                <div class="flex flex-wrap items-center justify-between gap-3 mt-3 text-sm">
+                    <span id="lb-title" class="text-neutral-200"></span>
+                    <span class="flex items-center gap-1">
+                        <button id="lb-full" type="button" class="px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/10 transition-colors">Full screen</button>
+                        <a id="lb-loom" href="#" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/10 transition-colors">Open on Loom</a>
+                        <button id="lb-close" type="button" class="px-3 py-2 rounded-lg bg-white text-neutral-900 font-medium hover:bg-neutral-200 transition-colors">Close</button>
+                    </span>
+                </div>
+            </div>
+        </div>
 
-            // Initialize animations on load
-            window.addEventListener("load", () => {
-                const elements = document.querySelectorAll(".initial-hidden");
-                elements.forEach((el) => {
-                    el.classList.remove("initial-hidden");
+        <script>
+            const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const ease = "cubic-bezier(0.2, 0.8, 0.2, 1)";
+            const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+            // ---------- Diagrams (inline SVG, one style for all) ----------
+            let dg = 0;
+            const box = (x, y, w, h, t, s) => `
+                <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="#fff" stroke="#d4d4d4"/>
+                <text x="${x + w / 2}" y="${y + h / 2 + (s ? -4 : 6)}" text-anchor="middle" font-size="16" font-weight="500" fill="#171717">${t}</text>
+                ${s ? `<text x="${x + w / 2}" y="${y + h / 2 + 15}" text-anchor="middle" font-size="13" fill="#737373">${s}</text>` : ""}`;
+            const arr = (x1, y1, x2, y2, id, dash) =>
+                `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#525252" stroke-width="1.5" ${dash ? 'stroke-dasharray="4 4"' : ""} marker-end="url(#${id})"/>`;
+            const lbl = (x, y, t) => `<text x="${x}" y="${y}" text-anchor="middle" font-size="13" fill="#737373">${t}</text>`;
+            const svg = (draw, label) => {
+                const id = "m" + ++dg;
+                return `<svg viewBox="0 0 480 300" role="img" aria-label="${label}" class="w-full h-full" font-family="Inter, sans-serif">
+                    <defs><marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#525252"/></marker></defs>
+                    <rect width="480" height="300" fill="#fafafa"/>${draw(id)}</svg>`;
+            };
+            const D = {
+                voice: svg((m) =>
+                    box(20, 46, 120, 208, "Caller", "phone or web") +
+                    box(170, 46, 130, 60, "Speech to text") +
+                    box(336, 46, 120, 60, "Model", "plus your tools") +
+                    box(336, 194, 120, 60, "Text to speech") +
+                    arr(134, 76, 168, 76, m) + arr(300, 76, 334, 76, m) + arr(396, 106, 396, 192, m) +
+                    arr(336, 212, 136, 212, m) + lbl(236, 204, "its voice, streamed back") +
+                    arr(134, 238, 334, 238, m, true) + lbl(236, 264, "you cut in, it stops talking"),
+                    "A caller's voice goes to speech to text, then the model, then text to speech and back. If the caller cuts in, the bot stops."),
+                evals: svg((m) =>
+                    box(24, 44, 190, 64, "Test cases", "real calls and edge cases") +
+                    box(266, 44, 190, 64, "Run old and new", "same inputs, both prompts") +
+                    box(266, 192, 190, 64, "Score every answer", "rules plus a judge model") +
+                    box(24, 192, 190, 64, "Ship the winner", "or roll back") +
+                    arr(214, 76, 264, 76, m) + arr(361, 108, 361, 190, m) + arr(266, 224, 216, 224, m) + arr(119, 192, 119, 110, m) +
+                    lbl(240, 160, "every change goes round"),
+                    "Test cases run against the old and new prompt, every answer is scored, the winner ships, and the loop repeats."),
+                agent: svg((m) =>
+                    box(20, 120, 104, 60, "You ask", "in plain words") +
+                    box(176, 120, 120, 60, "Model", "picks a step") +
+                    box(346, 34, 114, 52, "Book seats") +
+                    box(346, 124, 114, 52, "Search docs") +
+                    box(346, 214, 114, 52, "Your database") +
+                    arr(124, 150, 174, 150, m) +
+                    arr(296, 138, 344, 66, m) + arr(296, 150, 344, 150, m) + arr(296, 162, 344, 234, m) +
+                    arr(236, 180, 236, 230, m) + box(176, 232, 120, 44, "Done") +
+                    lbl(236, 24, "loops until the job is finished"),
+                    "You ask, the model picks a tool such as booking seats, searching docs or querying your database, and loops until the job is done."),
+                ops: svg((m) =>
+                    box(20, 44, 124, 60, "Ops dashboard", "React") +
+                    box(178, 44, 124, 60, "FastAPI", "10+ APIs") +
+                    box(336, 44, 124, 60, "Postgres", "calls and costs") +
+                    box(20, 196, 124, 60, "Cron checks", "critical APIs") +
+                    box(178, 196, 124, 60, "Slack alert", "when one fails") +
+                    box(336, 196, 124, 60, "Billing module", "after every call") +
+                    arr(144, 74, 176, 74, m) + arr(302, 74, 334, 74, m) + arr(398, 104, 398, 194, m) +
+                    arr(144, 226, 176, 226, m) + arr(82, 194, 82, 106, m, true) +
+                    lbl(240, 150, "internal tools at Bolna AI"),
+                    "Internal tools at Bolna AI: a React dashboard over FastAPI and Postgres, cron health checks that alert Slack, and a billing module after every call."),
+                sync: svg((m) =>
+                    box(20, 44, 124, 60, "Record", "camera switching") +
+                    box(178, 44, 124, 60, "Save on phone", "SQLite") +
+                    box(336, 44, 124, 60, "Upload queue", "survives restarts") +
+                    box(336, 196, 124, 60, "Network drops", "retry with backoff") +
+                    box(178, 196, 124, 60, "S3", "lands once") +
+                    arr(144, 74, 176, 74, m) + arr(302, 74, 334, 74, m) + arr(398, 104, 398, 194, m) + arr(336, 226, 304, 226, m) +
+                    lbl(240, 150, "vidsync, for a robotics startup"),
+                    "vidsync: record, save locally, queue the upload, retry when the network drops, and land in S3 once."),
+                tutor: svg((m) =>
+                    box(20, 120, 120, 60, "Claude Code", "explains code") +
+                    box(180, 120, 120, 60, "MCP server", "Code Tutor") +
+                    box(340, 40, 120, 60, "VS Code", "moves your cursor") +
+                    box(340, 200, 120, 60, "Whiteboard", "live Excalidraw") +
+                    arr(140, 150, 178, 150, m) + arr(300, 140, 338, 76, m) + arr(300, 160, 338, 224, m) +
+                    lbl(240, 290, "a Claude Code plugin that teaches a codebase"),
+                    "Code Tutor: Claude Code talks to an MCP server that moves the cursor in VS Code and draws on a live whiteboard."),
+            };
+
+            // ---------- Blocks ----------
+            // card kinds: shot [img, name, line, url], video [poster, name, line, src or loom], diagram [key, name, line], link [name, line, url]
+            const gh = (r) => "https://github.com/SwapnilChand/" + r;
+            const blocks = [
+                {
+                    title: "Voice agents for calls and live rooms",
+                    line: "I can build an AI that answers a call, talks like a person, and stops talking when you cut in.",
+                    proof: "At Arrowhead I shipped Pipecat voice agents to production for PhysicsWallah and upGrad. At Bolna AI (YC F25) I built the call data migration APIs, the post call billing module, and telecom compliance automation that closed 100+ cases.",
+                    cards: [
+                        { k: "video", img: "assets/video/interrogation-room-demo.jpg", name: "Interrogation Room, 2 min demo", line: "Three AI suspects and a sub inspector in one live voice room. I explain why I moved from Daily to LiveKit.", src: "assets/video/interrogation-room-demo.mp4", loom: "https://www.loom.com/share/44b05d4a0da64a489b3e342eb55810ff" },
+                        { k: "diagram", d: "voice", name: "How a voice call flows", line: "Speech to text, the model, text to speech, and the cut in that stops the bot mid sentence." },
+                        { k: "shot", img: "interrogation-room", name: "Interrogation Room", line: "Pipecat, LiveKit and Sarvam. Open the case file and question the suspects yourself.", url: "https://interrogation-room-eight.vercel.app" },
+                        { k: "shot", img: "maathu", name: "maathu", line: "Say Kannada phrases out loud and see how close you got.", url: "https://maathu-sigma.vercel.app" },
+                        { k: "shot", img: "anysub", name: "anysub", line: "Subtitles in 24 languages, even for mixed Hindi and English speech.", url: "https://anysub.vercel.app" },
+                        { k: "link", name: "voice-engine", line: "Full duplex streaming voice assistant with barge in, tool calling and live latency numbers. FastAPI, React, Sarvam.", url: gh("voice-engine") },
+                    ],
+                },
+                {
+                    title: "LLM evals and prompt testing",
+                    line: "I can tell you whether your AI gives good answers, and prove a prompt change made it better before it ships.",
+                    proof: "At Arrowhead I A/B tested prompts on live voice agents to cut hallucinations and hold context in long calls. For cola, my offline shell assistant, I wrote a benchmark: 17 of 20 commands right, about 2 seconds each on a laptop CPU.",
+                    cards: [
+                        { k: "diagram", d: "evals", name: "How I test an AI change", line: "Same inputs through the old and new prompt, every answer scored, then ship or roll back." },
+                        { k: "shot", img: "cola", name: "cola", line: "Plain English to a bash command, offline. 17 of 20 right in its own benchmark.", url: "https://cola-sh.vercel.app" },
+                        { k: "shot", img: "promptpen", name: "promptpen", line: "Marks the lines in a prompt that make a model guess, with the guide that says so.", url: "https://promptpen.vercel.app" },
+                        { k: "shot", img: "pertask", name: "pertask", line: "What one finished agent task really costs, failed runs counted in.", url: "https://pertask.vercel.app" },
+                        { k: "link", name: "PromptTune", line: "Compare one prompt across many models through OpenRouter, with versions and output benchmarks.", url: gh("prompt-tune") },
+                    ],
+                },
+                {
+                    title: "AI agents that use your tools",
+                    line: "I can build an agent that finishes the job, like booking the seat or finding the answer in your docs, not one that only chats.",
+                    proof: "I wrote a tool calling agent from scratch, no LangChain, on top of a full cinema booking backend. I built Code Tutor, a Claude Code plugin that uses MCP to drive your editor while it teaches. I shipped PR 57 to Ken, a personal AI agent.",
+                    cards: [
+                        { k: "video", img: "assets/video/movie-booking.jpg", name: "CineBook booking agent, 1 min demo", line: "Book cinema seats by chat. FastAPI, Postgres, Redis seat holds, Flutter.", loom: "https://www.loom.com/share/c660babf18a1489ba0ebb52cbdb9d75c" },
+                        { k: "diagram", d: "agent", name: "How an agent finishes a task", line: "The model picks a tool, reads the result, and loops until the job is done." },
+                        { k: "shot", img: "docsask", name: "docsask", line: "Ask your docs a question and see the section every sentence came from.", url: "https://docsask.vercel.app" },
+                        { k: "link", name: "Ken, PR 57", line: "Replies that quote the right message, inline video and workspace skills for a personal agent on Telegram.", url: "https://github.com/prasann16/kencomputer/pull/57" },
+                    ],
+                },
+                {
+                    title: "Full stack products, idea to live link",
+                    line: "I can take your idea to a live app with the backend, the admin dashboard, and the alerts that tell you when something breaks.",
+                    proof: "At Bolna AI I built 10+ FastAPI APIs and a dashboard to merge thousands of enterprise call records, plus health checks that post to Slack. In October 2026 I shipped 58 small web apps, every one live.",
+                    cards: [
+                        { k: "diagram", d: "ops", name: "Internal tools I built at Bolna AI", line: "Dashboard, APIs, billing after every call, and alerts when a critical API fails." },
+                        { k: "shot", img: "hourplan", name: "hourplan", line: "Fits your to do list between today's meetings. Every block says why it's there.", url: "https://hourplan.vercel.app" },
+                        { k: "shot", img: "pagecritic", name: "pagecritic", line: "Shows the exact lines on your landing page that lose visitors.", url: "https://pagecritic-ivory.vercel.app" },
+                        { k: "shot", img: "lucidlearn", name: "lucidlearn", line: "A lecture player that pauses where you'd get lost and explains that part.", url: "https://lucidlearn.vercel.app" },
+                        { k: "link", name: "All 58 live apps", line: "Voice, developer tools, learning, launching, productivity. Every link opens the working app.", url: "/more" },
+                    ],
+                },
+                {
+                    title: "Developer tools",
+                    line: "I can build the tools developers keep open all day: terminal helpers, VS Code extensions and Claude Code plugins.",
+                    proof: "At Cloud Code AI I split my time between a VS Code extension and a Next.js app for AI written docs, across 3 product pivots in 7 months.",
+                    cards: [
+                        { k: "diagram", d: "tutor", name: "Code Tutor", line: "A Claude Code plugin that moves your cursor, highlights code and draws on a whiteboard while it explains." },
+                        { k: "shot", img: "jsonmend", name: "jsonmend", line: "Fixes broken JSON from a model or a log, and marks every change.", url: "https://jsonmend.vercel.app" },
+                        { k: "shot", img: "repoatlas", name: "repoatlas", line: "Draws which folders import which in any GitHub repo.", url: "https://repoatlas-woad.vercel.app" },
+                        { k: "shot", img: "shipnotes", name: "shipnotes", line: "Turns a week of \"fix stuff\" commits into a changelog people can read.", url: "https://shipnotes-chi.vercel.app" },
+                        { k: "shot", img: "uiseek", name: "uiseek", line: "Searches 451 shadcn registries at once, in plain words.", url: "https://uiseek.vercel.app" },
+                    ],
+                },
+                {
+                    title: "Mobile apps for Android and iOS",
+                    line: "I can build a Flutter or React Native app that keeps working when the network doesn't.",
+                    proof: "Freelance Flutter work on Offlyn: 86 commits in 2 weeks across the app, its API and the admin dashboard. For a robotics startup I built vidsync, a video app that queues uploads offline and retries until they land.",
+                    cards: [
+                        { k: "video", img: "assets/video/ble-monitor.jpg", name: "ble-monitor, 4 min demo", line: "Flutter heart rate dashboard. Reconnects on its own and throttles alerts to one every 3 seconds.", loom: "https://www.loom.com/share/4b9e5621149745df8e0bce90cfd97ed7" },
+                        { k: "shot", img: "offlyn", name: "Offlyn", line: "Events app. I worked on multi slot events, bulk discounts and the admin API.", url: "https://offlyn.life" },
+                        { k: "diagram", d: "sync", name: "vidsync upload pipeline", line: "Record, save on the phone, queue, retry with backoff, land in S3 exactly once." },
+                        { k: "link", name: "vidsync code", line: "React Native and Expo. Offline first upload queue, presigned S3 uploads, idempotent by video id.", url: gh("vidsync") },
+                    ],
+                },
+            ];
+
+            const ext = (u) => !u.startsWith("/");
+            const play = `<span class="absolute inset-0 flex items-center justify-center"><span class="flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-neutral-900 shadow-sm"><svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Play</span></span>`;
+            const card = (c) => {
+                const cap = `<figcaption class="mt-3"><span class="block text-sm font-medium text-neutral-900">${esc(c.name)}</span><span class="block text-sm text-neutral-500 mt-1 leading-relaxed">${esc(c.line)}</span></figcaption>`;
+                const shell = (media, extra = "") => `<span class="card-media relative block aspect-[16/10] rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50 ${extra}">${media}</span>`;
+                if (c.k === "shot")
+                    return `<a href="${c.url}" ${ext(c.url) ? 'target="_blank" rel="noopener"' : ""} class="card card-link">${shell(`<img src="assets/shots/${c.img}.webp" alt="${esc(c.name)} home page" width="960" height="600" loading="lazy" class="w-full h-full object-cover object-top">`)}<figcaption class="mt-3"><span class="block text-sm font-medium text-neutral-900">${esc(c.name)} <span class="font-normal text-neutral-400">${esc(c.url.replace("https://", ""))}</span></span><span class="block text-sm text-neutral-500 mt-1 leading-relaxed">${esc(c.line)}</span></figcaption></a>`;
+                if (c.k === "video")
+                    return `<button type="button" class="card card-link text-left" data-video="${c.src || ""}" data-loom="${c.loom}" data-poster="${c.img}" data-title="${esc(c.name)}">${shell(`<img src="${c.img}" alt="" width="960" height="600" loading="lazy" class="w-full h-full object-cover">${play}`)}${cap}</button>`;
+                if (c.k === "diagram") return `<figure class="card">${shell(D[c.d])}${cap}</figure>`;
+                return `<a href="${c.url}" ${ext(c.url) ? 'target="_blank" rel="noopener"' : ""} class="card card-link">${shell(`<span class="absolute inset-0 p-5 flex flex-col justify-end"><span class="font-geist font-light tracking-tight text-2xl text-neutral-900">${esc(c.name)}</span><span class="text-sm text-neutral-500 mt-1">${ext(c.url) ? esc(c.url.replace("https://", "")) : "swapnilc.vercel.app/more"}</span></span>`)}<figcaption class="mt-3"><span class="block text-sm text-neutral-500 leading-relaxed">${esc(c.line)}</span></figcaption></a>`;
+            };
+            const chev = (d) => `<svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+            document.getElementById("blocks").innerHTML = blocks
+                .map((b, i) => `
+                <article class="blk relative bg-white border-t border-neutral-200 last:border-b">
+                    <h3>
+                        <button type="button" class="blk-btn w-full text-left py-6 flex items-start gap-4 sm:gap-6" aria-expanded="false" aria-controls="blk-${i}">
+                            <span class="text-sm text-neutral-400 tabular-nums pt-1.5 w-6 shrink-0">0${i + 1}</span>
+                            <span class="flex-1 min-w-0">
+                                <span class="blk-title block font-geist font-light tracking-tight text-2xl sm:text-[28px] leading-tight text-neutral-900 transition-colors">${esc(b.title)}</span>
+                                <span class="block text-neutral-600 mt-2 leading-relaxed">${esc(b.line)}</span>
+                            </span>
+                            <span class="blk-icon shrink-0 mt-1 w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-700" aria-hidden="true">${chev("M12 5v14M5 12h14")}</span>
+                        </button>
+                    </h3>
+                    <div id="blk-${i}" class="blk-panel pb-8 sm:pl-12 pl-10" hidden>
+                        <div class="flex items-end justify-between gap-6">
+                            <p class="text-sm text-neutral-600 leading-relaxed max-w-2xl">${esc(b.proof)}</p>
+                            <div class="hidden md:flex gap-2 shrink-0">
+                                <button type="button" class="rail-prev w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-700 hover:bg-neutral-50 transition-colors" aria-label="Scroll back">${chev("m15 18-6-6 6-6")}</button>
+                                <button type="button" class="rail-next w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-700 hover:bg-neutral-50 transition-colors" aria-label="Scroll on">${chev("m9 18 6-6-6-6")}</button>
+                            </div>
+                        </div>
+                        <div class="rail mt-5 -mr-4 sm:mr-0 pr-4 sm:pr-0 flex gap-4 overflow-x-auto snap-x snap-mandatory">
+                            ${b.cards.map((c) => `<div class="rail-item snap-start shrink-0 w-[80vw] max-w-[340px] sm:w-[340px]">${card(c)}</div>`).join("")}
+                        </div>
+                    </div>
+                </article>`)
+                .join("");
+
+            // ---------- Expand with FLIP: the blocks below slide, cards fade in. Transform and opacity only. ----------
+            const flip = (mutate, movers) => {
+                const before = movers.map((el) => el.getBoundingClientRect().top);
+                mutate();
+                if (reduce) return;
+                movers.forEach((el, i) => {
+                    const dy = before[i] - el.getBoundingClientRect().top;
+                    if (dy) el.animate([{ transform: `translateY(${dy}px)` }, { transform: "none" }], { duration: 380, easing: ease });
                 });
+            };
+            const after = (el) => {
+                const list = [];
+                let n = el.nextElementSibling;
+                while (n) { list.push(n); n = n.nextElementSibling; }
+                return [...list, document.getElementById("answers")];
+            };
+            document.querySelectorAll(".blk-btn").forEach((btn) => {
+                const blk = btn.closest(".blk");
+                const panel = blk.querySelector(".blk-panel");
+                btn.addEventListener("click", () => {
+                    const open = btn.getAttribute("aria-expanded") === "true";
+                    if (panel._busy) return;
+                    if (!open) {
+                        btn.setAttribute("aria-expanded", "true");
+                        flip(() => (panel.hidden = false), after(blk));
+                        if (!reduce) {
+                            panel.querySelector("p").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: "ease-out" });
+                            panel.querySelectorAll(".rail-item").forEach((it, i) =>
+                                it.animate([{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }], { duration: 320, delay: 60 + i * 45, easing: ease, fill: "backwards" })
+                            );
+                        }
+                    } else {
+                        btn.setAttribute("aria-expanded", "false");
+                        const close = () => flip(() => (panel.hidden = true), after(blk));
+                        if (reduce) return close();
+                        panel._busy = true;
+                        panel.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, easing: "ease-out" }).onfinish = () => {
+                            close();
+                            panel._busy = false;
+                        };
+                    }
+                });
+                const rail = panel.querySelector(".rail");
+                panel.querySelector(".rail-prev").addEventListener("click", () => rail.scrollBy({ left: -356, behavior: reduce ? "auto" : "smooth" }));
+                panel.querySelector(".rail-next").addEventListener("click", () => rail.scrollBy({ left: 356, behavior: reduce ? "auto" : "smooth" }));
+            });
+
+            // First block starts open so the visuals are one glance away
+            {
+                const b = document.querySelector(".blk-btn");
+                b.setAttribute("aria-expanded", "true");
+                document.getElementById(b.getAttribute("aria-controls")).hidden = false;
+            }
+
+            // ---------- Experience ----------
+            const jobs = [
+                ["Freelance Flutter Developer", "Offlyn", "Jul 2026 to Aug 2026", "Two week paid trial on an events app. 86 commits across the Flutter app, the admin API and the Next.js admin dashboard: multi slot events, bulk discounts, guest CSV exports.", ["Flutter", "Dart", "Node", "MongoDB", "Next.js"]],
+                ["Full Stack Developer", "Bolna AI (YC F25)", "Aug 2025 to Mar 2026", "Built an internal dashboard and 10+ FastAPI APIs for enterprise call data migrations. Built the post call billing module, health checks with Slack alerts, and telecom compliance automation that closed 100+ cases. Prototyped a graph based voice agent builder in React.", ["FastAPI", "Python", "PostgreSQL", "React", "RabbitMQ", "Datadog", "WebSockets"], true],
+                ["Prompt Engineer", "Arrowhead", "Mar 2025 to May 2025", "Tuned Pipecat voice agent prompts for PhysicsWallah, upGrad, Tata 1MG and Mobikwik pilots in an early team of 8. Cut hallucinations, held context in long calls, and shipped through fast A/B tests.", ["Pipecat", "Prompt engineering", "Voice AI", "A/B testing"]],
+                ["Software Engineer", "Cloud Code AI", "Jul 2024 to Jan 2025", "Led the frontend across 3 pivots in 7 months: Kaizen AI, Akiradocs and BrowserAI. Split my time between a VS Code extension and a Next.js app, wiring the UI to LLM endpoints for docs and code review.", ["Next.js", "Tailwind", "TypeScript", "VS Code API", "React"]],
+                ["Android Developer, intern", "WedMist", "Jun 2021 to Aug 2021", "Built Android shopping screens from Figma designs in Java and XML.", ["Android", "Java", "XML"]],
+            ];
+            document.getElementById("jobs").innerHTML = jobs
+                .map(([role, co, when, what, tags, dark]) => `
+                <div class="rounded-lg border p-5 ${dark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-50 border-neutral-200"}">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 mb-3">
+                        <h3 class="font-geist font-light tracking-tight text-lg ${dark ? "text-neutral-100" : ""}">${role}</h3>
+                        <span class="text-xs font-medium ${dark ? "text-neutral-400" : "text-neutral-600"}">${when}</span>
+                    </div>
+                    <p class="font-medium mb-2 text-sm ${dark ? "text-neutral-200" : "text-neutral-900"}">${co}</p>
+                    <p class="text-sm leading-relaxed ${dark ? "text-neutral-400" : "text-neutral-600"}">${what}</p>
+                    <div class="flex flex-wrap gap-2 mt-4">${tags.map((t) => `<span class="px-2.5 py-1 rounded-md bg-white border border-neutral-200 text-xs font-medium ${dark ? "text-neutral-900" : "text-neutral-700"}">${t}</span>`).join("")}</div>
+                </div>`)
+                .join("");
+
+            // ---------- Tabs: only the right column changes ----------
+            const tabs = document.getElementById("tabs");
+            const panels = { build: document.getElementById("panel-build"), experience: document.getElementById("panel-experience") };
+            let current = "build";
+            const show = (name, focus) => {
+                if (name === current) return;
+                const out = panels[current], inn = panels[name];
+                current = name;
+                tabs.dataset.active = name;
+                tabs.querySelectorAll("[role=tab]").forEach((t) => {
+                    const on = t.dataset.tab === name;
+                    t.setAttribute("aria-selected", on);
+                    t.tabIndex = on ? 0 : -1;
+                    t.classList.toggle("text-white", on);
+                    t.classList.toggle("text-neutral-600", !on);
+                    if (on && focus) t.focus();
+                });
+                history.replaceState(null, "", name === "build" ? location.pathname : "#experience");
+                const swap = () => {
+                    out.hidden = true;
+                    inn.hidden = false;
+                    const col = tabs.parentElement.parentElement.getBoundingClientRect().top;
+                    if (col < 0) scrollBy(0, col - 12);
+                    if (!reduce) inn.animate([{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }], { duration: 280, easing: ease });
+                };
+                if (reduce) return swap();
+                out.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: "ease-out" }).onfinish = swap;
+            };
+            tabs.addEventListener("click", (e) => { const t = e.target.closest("[role=tab]"); if (t) show(t.dataset.tab); });
+            tabs.addEventListener("keydown", (e) => {
+                if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); show(current === "build" ? "experience" : "build", true); }
+            });
+            if (location.hash === "#experience") {
+                panels.build.hidden = true; panels.experience.hidden = false; current = "experience"; tabs.dataset.active = "experience";
+                tabs.querySelectorAll("[role=tab]").forEach((t) => { const on = t.dataset.tab === "experience"; t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1; t.classList.toggle("text-white", on); t.classList.toggle("text-neutral-600", !on); });
+            }
+
+            // ---------- Hero intro: muted autoplay, poster if blocked ----------
+            const preview = document.getElementById("intro-preview");
+            preview.muted = true;
+            if (!reduce) {
+                preview.autoplay = true;
+                const p = preview.play();
+                if (p) p.catch(() => {});
+            }
+
+            // ---------- Lightbox: grows out of what you clicked ----------
+            const lb = document.getElementById("lb"), lbBox = document.getElementById("lb-box"), lbBg = document.getElementById("lb-bg"), lbMedia = document.getElementById("lb-media");
+            let origin = null;
+            const loomEmbed = (u) => u.replace("/share/", "/embed/") + "?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true";
+            const openLb = (trigger) => {
+                origin = trigger;
+                const { video, loom, poster, title } = trigger.dataset;
+                lbMedia.innerHTML = video
+                    ? `<video src="${video}" poster="${poster}" controls autoplay playsinline class="w-full h-full bg-black"></video>`
+                    : `<iframe src="${loomEmbed(loom)}" title="${title}" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                document.getElementById("lb-title").textContent = title;
+                const lo = document.getElementById("lb-loom");
+                lo.href = loom; lo.hidden = !loom;
+                lb.classList.remove("hidden"); lb.classList.add("flex");
+                document.documentElement.style.overflow = "hidden";
+                preview.pause();
+                document.getElementById("lb-close").focus({ preventScroll: true });
+                if (reduce) return;
+                const a = trigger.getBoundingClientRect(), b = lbBox.getBoundingClientRect();
+                const s = Math.max(a.width / b.width, 0.15);
+                const dx = a.left + a.width / 2 - (b.left + b.width / 2), dy = a.top + a.height / 2 - (b.top + b.height / 2);
+                lbBg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: "ease-out" });
+                lbBox.animate(
+                    [{ transform: `translate(${dx}px, ${dy}px) scale(${s})`, opacity: 0 }, { opacity: 1, offset: 0.4 }, { transform: "none", opacity: 1 }],
+                    { duration: 420, easing: ease }
+                );
+            };
+            const closeLb = () => {
+                const done = () => {
+                    lb.classList.add("hidden"); lb.classList.remove("flex");
+                    lbMedia.innerHTML = "";
+                    document.documentElement.style.overflow = "";
+                    if (!reduce) preview.play().catch(() => {});
+                    origin && origin.focus({ preventScroll: true });
+                };
+                if (document.fullscreenElement) document.exitFullscreen();
+                if (reduce || !origin) return done();
+                lbBg.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, easing: "ease-out", fill: "forwards" });
+                lbBox.animate([{ transform: "none", opacity: 1 }, { transform: "scale(0.96)", opacity: 0 }], { duration: 200, easing: "ease-out", fill: "forwards" }).onfinish = () => {
+                    lbBg.getAnimations().forEach((x) => x.cancel());
+                    lbBox.getAnimations().forEach((x) => x.cancel());
+                    done();
+                };
+            };
+            document.addEventListener("click", (e) => {
+                const t = e.target.closest("[data-video], [data-loom]");
+                if (t && !lb.contains(t)) openLb(t);
+            });
+            document.getElementById("lb-close").addEventListener("click", closeLb);
+            lbBg.addEventListener("click", closeLb);
+            document.getElementById("lb-full").addEventListener("click", () => {
+                const el = lbMedia.querySelector("video") || lbMedia;
+                (el.requestFullscreen || el.webkitEnterFullscreen || (() => {})).call(el);
+            });
+            document.addEventListener("keydown", (e) => {
+                if (lb.classList.contains("hidden")) return;
+                if (e.key === "Escape" && !document.fullscreenElement) closeLb();
+                if (e.key === "Tab") {
+                    const f = [...lb.querySelectorAll("button, a:not([hidden]), video, iframe")];
+                    const i = f.indexOf(document.activeElement);
+                    if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+                    else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+                }
             });
         </script>
     </body>
